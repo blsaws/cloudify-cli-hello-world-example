@@ -1,0 +1,1 @@
+# cloudify-cli-hello-world-example

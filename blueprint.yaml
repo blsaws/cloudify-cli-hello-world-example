@@ -124,25 +124,11 @@ node_templates:
           inputs:
             script_path:
               default: scripts/start.sh
-            fabric_env: &simple_fabric_env
-              default:
-                user: { get_input: ssh_user }
-                port: { get_input: ssh_port }
-                key_filename: { get_input: ssh_key_filename }
-                host_string: { get_attribute: [virtual_ip, floating_ip_address] }
-                always_use_pty: true
         stop:
           implementation: fabric.fabric_plugin.tasks.run_script
           inputs:
             script_path:
               default: scripts/stop.sh
-            fabric_env: &simple_fabric_env
-              default:
-                user: { get_input: ssh_user }
-                port: { get_input: ssh_port }
-                key_filename: { get_input: ssh_key_filename }
-                host_string: { get_attribute: [virtual_ip, floating_ip_address] }
-                always_use_pty: true
 
 outputs:
   http_endpoint:

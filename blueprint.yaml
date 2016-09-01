@@ -124,11 +124,15 @@ node_templates:
           inputs:
             script_path:
               default: scripts/start.sh
+            hide_output: *hide_output
+            fabric_env: *simple_fabric_env
         stop:
           implementation: fabric.fabric_plugin.tasks.run_script
           inputs:
             script_path:
               default: scripts/stop.sh
+            hide_output: *hide_output
+            fabric_env: *simple_fabric_env
 
 outputs:
   http_endpoint:

@@ -124,9 +124,6 @@ node_templates:
           inputs:
             script_path:
               default: scripts/start.sh
-            hide_output: &hide_output
-              default:
-                - running
             fabric_env: &simple_fabric_env
               default:
                 user: { get_input: ssh_user }
@@ -139,9 +136,6 @@ node_templates:
           inputs:
             script_path:
               default: scripts/stop.sh
-            hide_output: &hide_output
-              default:
-                - running
             fabric_env: &simple_fabric_env
               default:
                 user: { get_input: ssh_user }
